@@ -1,14 +1,45 @@
-import React from 'react';
+import Axios from 'axios';
+import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import BlogItem from "../blog/blog-item";
 
-export default function () {
-    return (
-        <div>
-            <h2>Blog</h2>
+class Blog extends Component {
+    constructor() {
+        super();
 
-            <div>
-                <Link to="/about-me">Read more about myself</Link>
+        this.state = {
+            blogItems: []
+        }
+
+        this.getBlogItems = this.getBlogItems.bind(this);
+    }
+
+    getBlogItems() {
+        Axios.get("https://tinhnguyen.devcamp.space/portfolio/portfolio_blogs", { withCredentials: true })
+            .then(response => {
+                this.setState({
+                    blogItems: response.data.portfolio_blogs
+                })
+            }).catch(error => {
+                console.log("getBlogItems error", error);
+            });
+    }
+
+    componentWillMount() {
+        this.getBlogItems();
+    }
+
+    render() {
+        const blogRecords = this.state.blogItems.map(blogItem => {
+            return <BlogItem key={blogItem.id} blogItem={blogItem} />
+        });
+
+        return (
+            <div className="blog-container">
+                <div className="content-container">{blogRecords}</div>
             </div>
-        </div>
-    );
+        )
+    }
 }
+
+export default Blog;
