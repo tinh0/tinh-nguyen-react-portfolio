@@ -6,7 +6,7 @@ import BlogItem from "../blog/blog-item";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BlogModal from "../modals/blog-modal";
 
-class Blog extends Component {
+export default class Blog extends Component {
   constructor() {
     super();
 
@@ -113,5 +113,3 @@ class Blog extends Component {
     )
   }
 }
-
-export default Blog;
