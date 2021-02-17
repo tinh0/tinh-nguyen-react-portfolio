@@ -262,7 +262,7 @@ export default class PortfolioForm extends Component {
               <div className="image-removal-link">
                 <a onClick={() => this.deleteImage("banner_image")}>
                   Remove File
-                                </a>
+                </a>
               </div>
             </div>
           ) : (
