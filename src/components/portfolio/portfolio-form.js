@@ -18,7 +18,7 @@ export default class PortfolioForm extends Component {
       url: "",
       thumb_image: "",
       banner_image: "",
-      logo: "",
+      logo_url: "",
       editMode: false,
       apiUrl: "https://tinhnguyen.devcamp.space/portfolio/portfolio_items",
       apiAction: "post"
@@ -164,7 +164,7 @@ export default class PortfolioForm extends Component {
         this.setState({
           name: "",
           description: "",
-          category: "eCommerce",
+          category: "Programming",
           position: "",
           url: "",
           thumb_image: "",
@@ -220,9 +220,9 @@ export default class PortfolioForm extends Component {
             value={this.state.category}
             onChange={this.handleChange}
           >
-            <option value="eCommerce">eCommerce</option>
-            <option value="Scheduling">Scheduling</option>
-            <option value="Enterprise">Enterprise</option>
+            <option value="Programming">Programming</option>
+            <option value="Web">Web</option>
+            <option value="Design">Design</option>
           </select>
         </div>
 
@@ -247,15 +247,15 @@ export default class PortfolioForm extends Component {
               </div>
             </div>
           ) : (
-              <DropzoneComponent
-                ref={this.thumbRef}
-                config={this.componentConfig()}
-                djsConfig={this.djsConfig()}
-                eventHandlers={this.handleThumbDrop()}
-              >
-                <div className="dz-message">Thumbnail</div>
-              </DropzoneComponent>
-            )}
+            <DropzoneComponent
+              ref={this.thumbRef}
+              config={this.componentConfig()}
+              djsConfig={this.djsConfig()}
+              eventHandlers={this.handleThumbDrop()}
+            >
+              <div className="dz-message">Thumbnail</div>
+            </DropzoneComponent>
+          )}
           {this.state.banner_image_url && this.state.editMode ? (
             <div className="portfolio-manager-image-wrapper">
               <img src={this.state.banner_image_url} />
@@ -266,34 +266,34 @@ export default class PortfolioForm extends Component {
               </div>
             </div>
           ) : (
-              <DropzoneComponent
-                ref={this.bannerRef}
-                config={this.componentConfig()}
-                djsConfig={this.djsConfig()}
-                eventHandlers={this.handleBannerDrop()}
-              >
-                <div className="dz-message">Banner</div>
-              </DropzoneComponent>
-            )}
+            <DropzoneComponent
+              ref={this.bannerRef}
+              config={this.componentConfig()}
+              djsConfig={this.djsConfig()}
+              eventHandlers={this.handleBannerDrop()}
+            >
+              <div className="dz-message">Banner</div>
+            </DropzoneComponent>
+          )}
           {this.state.logo_url && this.state.editMode ? (
             <div className="portfolio-manager-image-wrapper">
               <img src={this.state.logo_url} />
               <div className="image-removal-link">
                 <a onClick={() => this.deleteImage("logo_image")}>
                   Remove File
-                                </a>
+                </a>
               </div>
             </div>
           ) : (
-              <DropzoneComponent
-                ref={this.logoRef}
-                config={this.componentConfig()}
-                djsConfig={this.djsConfig()}
-                eventHandlers={this.handleLogoDrop()}
-              >
-                <div className="dz-message">Logo</div>
-              </DropzoneComponent>
-            )}
+            <DropzoneComponent
+              ref={this.logoRef}
+              config={this.componentConfig()}
+              djsConfig={this.djsConfig()}
+              eventHandlers={this.handleLogoDrop()}
+            >
+              <div className="dz-message">Logo</div>
+            </DropzoneComponent>
+          )}
 
         </div>
 

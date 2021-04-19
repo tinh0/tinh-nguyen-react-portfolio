@@ -1,9 +1,15 @@
 .nav-wrapper {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  color: white;
+  background-color: darkblue;
   display: flex;
   justify-content: space-between;
   padding: 30px;
 
   .right-side {
+    margin-right: 60px;
     a {
       margin-left: 15px;
       cursor: pointer;
@@ -29,7 +35,7 @@
     font-size: 0.9rem;
 
     a {
-      color: $gray;
+      color: white;
       text-decoration: none;
       &:hover {
         color: black;
@@ -37,13 +43,13 @@
     }
 
     &:hover {
-      color: black;
       border-bottom: 1px solid black;
+      color: black;
     }
 
     .nav-link-active {
-      border-bottom: 1px solid black;
-      color: black;
+      color: white;
+      border-bottom: 1px solid white
     }
   }
 }

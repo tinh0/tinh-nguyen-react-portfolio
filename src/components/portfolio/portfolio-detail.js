@@ -39,9 +39,10 @@ export default class PortfolioDetail extends Component {
 
     const bannerStyles = {
       backgroundImage: "url(" + banner_image_url + ")",
-      backgroundSize: "cover",
+      height: "700px",
+      overflow: "auto",
+      // backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "center center"
     }
 
     const logoStyles = {
