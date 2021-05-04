@@ -1,24 +1,37 @@
 import React from 'react';
-import profilePicture from "../../../static/assets/images/bagel-honey.jpg";
+import profilePicture from '../../../static/assets/images/bagel-honey.jpg';
 
 export default function () {
   return (
-    <div className="content-page-wrapper" style={{
-      marginTop: "84.8px"
-    }}> 
-      <div className="right-column">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum est fuga dolorum officiis quo ratione vero voluptatibus veniam optio, eius fugit, blanditiis facilis quas! Maxime neque ipsum voluptate. Nobis, expedita?
-        Enim quod laboriosam quam ratione dolore consectetur ab cupiditate voluptates quis illum ipsum tenetur reiciendis recusandae doloribus velit dolorem nam incidunt expedita maiores, harum ea nobis placeat. Quis, praesentium maxime?
-        Quisquam voluptatum molestiae facilis cum labore tempora accusantium, est facere eligendi consectetur ut dolor quas fugit commodi magnam ab? Sapiente, eaque! Incidunt cumque explicabo autem corporis omnis, deserunt natus aspernatur.
-        Delectus numquam iste optio distinctio corrupti autem velit, vel soluta maxime, ratione nemo et possimus exercitationem illum, est aliquam! Aspernatur, culpa temporibus deserunt quo fugit quaerat at neque beatae distinctio.
-        Quasi dolorem, veritatis rem quam praesentium, voluptate doloribus ea fugiat officiis modi suscipit sequi facilis adipisci. Omnis, numquam voluptatibus dolor voluptas beatae voluptatem et corporis, sed culpa corrupti pariatur nisi.
-      </div>
-      <div className="left-column"
+    <div
+      className='content-page-wrapper'
       style={{
-        background: "url(" + profilePicture + ") no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-      }} />
+        marginTop: '84.8px',
+      }}
+    >
+      <div className='right-column'>
+        <h1> About Me</h1>
+        <div className='about-text'>
+          Hello! I'm Tinh Nguyen and I'm a senior at Bingham High. I'm an
+          aspiring software/web developer and I will be going to the University
+          of Utah in computer science next year. <br /><br />I like to code, I know
+          several languages and have made projects in all of them including
+          HTML, CSS, JavaScript, Java, Python, and C#, and front-end frameworks
+          such as Bootstrap and React. I'm constantly learning more about them
+          and improving my skills. <br /><br />
+          In my free time I like to play in the local chess tournaments, I'm
+          currently the 2020 state co-champion and the 2021 high school
+          champion.
+        </div>
+      </div>
+      <div
+        className='left-column'
+        style={{
+          background: 'url(' + profilePicture + ') no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
     </div>
   );
 }

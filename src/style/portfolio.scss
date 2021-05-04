@@ -14,20 +14,19 @@
     }
 
     .img-text-wrapper {
+      width: 100%;
       position: absolute;
       top: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       height: 100%;
-      text-align: center;
-      padding-left: 100px;
-      padding-right: 100px;
+      justify-content: center;
 
       .subtitle {
         transition: 1s ease-in-out;
         color: transparent;
+        text-align: center;
+        width: 100%;
       }
     }
 

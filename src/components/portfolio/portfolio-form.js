@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DropzoneComponent from 'react-dropzone-component';
 
-import '../../../node_modules/react-dropzone-component/styles/filepicker.css';
-import '../../../node_modules/dropzone/dist/min/dropzone.min.css';
-
 export default class PortfolioForm extends Component {
   constructor(props) {
     super(props);
@@ -12,12 +9,12 @@ export default class PortfolioForm extends Component {
     this.state = {
       name: '',
       description: '',
-      category: 'Programming',
+      category: 'eCommerce',
       position: '',
       url: '',
       thumb_image: '',
       banner_image: '',
-      logo_url: '',
+      logo: '',
       editMode: false,
       apiUrl: 'https://tinhnguyen.devcamp.space/portfolio/portfolio_items',
       apiAction: 'post',
@@ -33,8 +30,8 @@ export default class PortfolioForm extends Component {
     this.deleteImage = this.deleteImage.bind(this);
 
     this.thumbRef = React.createRef();
-    this.logoRef = React.createRef();
     this.bannerRef = React.createRef();
+    this.logoRef = React.createRef();
   }
 
   deleteImage(imageType) {
@@ -43,16 +40,13 @@ export default class PortfolioForm extends Component {
         `https://tinhnguyen.devcamp.space/portfolio/delete-portfolio-image/${this.state.id}?image_type=${imageType}`,
         { withCredentials: true }
       )
-      .then((repsonse) => {
-        console.log('deleteImage', response);
-      })
-      .catch((error) => {
-        console.log('deleteImage error', error);
-      })
       .then((response) => {
         this.setState({
           [`${imageType}_url`]: '',
         });
+      })
+      .catch((error) => {
+        console.log('deleteImage error', error);
       });
   }
 
@@ -76,7 +70,7 @@ export default class PortfolioForm extends Component {
         id: id,
         name: name || '',
         description: description || '',
-        category: category || 'Programming',
+        category: category || 'eCommerce',
         position: position || '',
         url: url || '',
         editMode: true,
@@ -95,15 +89,15 @@ export default class PortfolioForm extends Component {
     };
   }
 
-  handleLogoDrop() {
-    return {
-      addedfile: (file) => this.setState({ logo_image: file }),
-    };
-  }
-
   handleBannerDrop() {
     return {
       addedfile: (file) => this.setState({ banner_image: file }),
+    };
+  }
+
+  handleLogoDrop() {
+    return {
+      addedfile: (file) => this.setState({ logo: file }),
     };
   }
 
@@ -139,8 +133,8 @@ export default class PortfolioForm extends Component {
       formData.append('portfolio_item[banner_image]', this.state.banner_image);
     }
 
-    if (this.state.logo_image) {
-      formData.append('portfolio_item[logo_image]', this.state.logo_image);
+    if (this.state.logo) {
+      formData.append('portfolio_item[logo]', this.state.logo);
     }
 
     return formData;
@@ -164,13 +158,12 @@ export default class PortfolioForm extends Component {
           this.props.handleEditFormSubmission();
         } else {
           this.props.handleNewFormSubmission(response.data.portfolio_item);
-          console.log(response.data.portfolio_item);
         }
 
         this.setState({
           name: '',
           description: '',
-          category: 'Programming',
+          category: 'eCommerce',
           position: '',
           url: '',
           thumb_image: '',
@@ -180,6 +173,7 @@ export default class PortfolioForm extends Component {
           apiUrl: 'https://tinhnguyen.devcamp.space/portfolio/portfolio_items',
           apiAction: 'post',
         });
+
         [this.thumbRef, this.bannerRef, this.logoRef].forEach((ref) => {
           ref.current.dropzone.removeAllFiles();
         });
@@ -190,7 +184,7 @@ export default class PortfolioForm extends Component {
 
     event.preventDefault();
   }
-  //do the last one
+
   render() {
     return (
       <form onSubmit={this.handleSubmit} className='portfolio-form-wrapper'>
@@ -225,6 +219,7 @@ export default class PortfolioForm extends Component {
             name='category'
             value={this.state.category}
             onChange={this.handleChange}
+            className='select-element'
           >
             <option value='Programming'>Programming</option>
             <option value='Web'>Web</option>
@@ -246,9 +241,10 @@ export default class PortfolioForm extends Component {
           {this.state.thumb_image_url && this.state.editMode ? (
             <div className='portfolio-manager-image-wrapper'>
               <img src={this.state.thumb_image_url} />
+
               <div className='image-removal-link'>
                 <a onClick={() => this.deleteImage('thumb_image')}>
-                  Remove File
+                  Remove file
                 </a>
               </div>
             </div>
@@ -262,12 +258,14 @@ export default class PortfolioForm extends Component {
               <div className='dz-message'>Thumbnail</div>
             </DropzoneComponent>
           )}
+
           {this.state.banner_image_url && this.state.editMode ? (
             <div className='portfolio-manager-image-wrapper'>
               <img src={this.state.banner_image_url} />
+
               <div className='image-removal-link'>
                 <a onClick={() => this.deleteImage('banner_image')}>
-                  Remove File
+                  Remove file
                 </a>
               </div>
             </div>
@@ -281,13 +279,13 @@ export default class PortfolioForm extends Component {
               <div className='dz-message'>Banner</div>
             </DropzoneComponent>
           )}
+
           {this.state.logo_url && this.state.editMode ? (
             <div className='portfolio-manager-image-wrapper'>
               <img src={this.state.logo_url} />
+
               <div className='image-removal-link'>
-                <a onClick={() => this.deleteImage('logo_image')}>
-                  Remove File
-                </a>
+                <a onClick={() => this.deleteImage('logo')}>Remove file</a>
               </div>
             </div>
           ) : (

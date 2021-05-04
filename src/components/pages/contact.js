@@ -14,6 +14,7 @@ export default function () {
         }}
       />
       <div className='right-column'>
+        <h1>Contact Me!</h1>
         <div className='contact-bullet-points'>
           <div className='bullet-point-group'>
             <div className='icon'>
