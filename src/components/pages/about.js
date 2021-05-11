@@ -4,13 +4,13 @@ import profilePicture from '../../../static/assets/images/bagel-honey.jpg';
 export default function () {
   return (
     <div
-      className='content-page-wrapper'
+      className='homepage-wrapper'
       style={{
         marginTop: '84.8px',
       }}
     >
       <div className='right-column'>
-        <h1> About Me</h1>
+        <h1> About Me (needs picture of me)</h1>
         <div className='about-text'>
           Hello! I'm Tinh Nguyen and I'm a senior at Bingham High. I'm an
           aspiring software/web developer and I will be going to the University
@@ -22,6 +22,10 @@ export default function () {
           In my free time I like to play in the local chess tournaments, I'm
           currently the 2020 state co-champion and the 2021 high school
           champion.
+        </div>
+        <div className="button-wrapper">
+          <button>Contact</button>
+          <button>Resume</button>
         </div>
       </div>
       <div

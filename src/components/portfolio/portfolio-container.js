@@ -62,7 +62,7 @@ export default class PortfolioContainer extends Component {
     }
 
     return (
-      <div className="homepage-wrapper">
+      <div className="portfoliosection-wrapper">
         <div className="filter-links">
           <button className="btn" onClick={() => this.handleFilter("Programming")}>
             Programming

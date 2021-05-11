@@ -1,4 +1,4 @@
-.homepage-wrapper {
+.portfoliosection-wrapper {
   display: grid;
   grid-template-columns: 1fr;
 
@@ -12,6 +12,79 @@
   }
 }
 
+.homepage-wrapper {
+  width: 100%;
+  display: flex;
+  padding-bottom: 20px;
+  height: calc(100vh - 84.8px);
+
+  .right-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+    font-size: 1em;
+    max-height: calc(100vh - 84.8px);
+    width: 50%;
+    height: 100%;
+
+    .contact-bullet-points {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 21px;
+
+      .bullet-point-group {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          font-size: 2em;
+          color: $teal;
+        }
+
+        .text {
+          font-size: 1.5em;
+          font-weight: 900;
+          margin-left: 21px;
+        }
+      }
+    }
+  }
+}
+
+.left-column {
+  width: 50%;
+  height: 100%;
+}
+
 .about-text {
   font-size: 1.2em;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-top: 50px;
+
+  button {
+    height: 100px;
+    width: 150px;
+    border-radius: 10%;
+    line-height: 50px;
+    padding: 20px;
+    background-color: rgb(38, 106, 253);
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+      transition: 0.5s;
+      color: darkblue;
+      background-color: white;
+      border: darkblue 3px solid;
+    }
+  }
 }

@@ -37,15 +37,15 @@
     a {
       color: white;
       text-decoration: none;
-      &:hover {
-        color: black;
-      }
+      // &:hover {
+      //   color: black;
+      // }
     }
 
-    &:hover {
-      border-bottom: 1px solid black;
-      color: black;
-    }
+    // &:hover {
+    //   border-bottom: 1px solid black;
+    //   color: black;
+    // }
 
     .nav-link-active {
       color: white;

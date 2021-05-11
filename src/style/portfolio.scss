@@ -23,10 +23,11 @@
       justify-content: center;
 
       .subtitle {
-        transition: 1s ease-in-out;
+        transition: .5s ease-in-out;
         color: transparent;
         text-align: center;
         width: 100%;
+        font-size: 1.3em;
       }
     }
 
@@ -43,6 +44,6 @@
 }
 
 .image-blur {
-  transition: 1s;
+  transition: .5s;
   filter: brightness(10%);
 }

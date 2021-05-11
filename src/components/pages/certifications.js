@@ -12,7 +12,7 @@ import Certification9 from '../../../static/assets/images/certifications/premeir
 export default function Certifications() {
   return (
     <div>
-      <h1>Certifications</h1>
+      <h1 className="certification-header">Certifications</h1>
       <div className='certification-grid'>
         <div
           className='certification-card'

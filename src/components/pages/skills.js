@@ -13,7 +13,6 @@ export default function Skills() {
             <li>C#</li>
             <li>Python</li>
             <li>HTML and CSS</li>
-            <li>WordPress</li>
           </ul>
         </div>
         <div>
