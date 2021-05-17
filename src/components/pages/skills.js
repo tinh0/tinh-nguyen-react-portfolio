@@ -3,12 +3,12 @@ import React from 'react'
 export default function Skills() {
   return (
     <div className="skills-container">
-      <h1>My Skills and Current Projects(fix this later)</h1>
+      <h1>My Skills and Current Projects</h1>
       <div className="three-column">
         <div>
           <h2>Have Experience In...</h2>
           <ul>
-            <li>ES6 Javascript</li>
+            <li>Javascript</li>
             <li>Java</li>
             <li>C#</li>
             <li>Python</li>
@@ -30,15 +30,15 @@ export default function Skills() {
           <ul className="projects">
             <li>
               <h3>ClaimALead Sales CRM for Marquee IT</h3>
-              <div>Using C# ASP.Net MVC, PHP, SQL, Azure</div>
+              <span>Using C# ASP.Net MVC, PHP, SQL, Azure</span>
             </li>
             <li>
               <h3>TODO App w/ James and Jackson</h3>
-              <div>Using React, SCSS, and Firebase</div>
+              <span>Using React, SCSS, and Firebase</span>
             </li>
             <li>
               <h3>SkillsUSA Nationals Web Design</h3>
-              <div>HTML and CSS</div>
+              <span>HTML and CSS</span>
             </li>
           </ul>
         </div>

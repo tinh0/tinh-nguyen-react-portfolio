@@ -1,5 +1,6 @@
 import React from 'react';
-import profilePicture from '../../../static/assets/images/bagel-honey.jpg';
+import profilePicture from '../../../static/assets/images/IMG_8254.jpg';
+// import Resume from '../../../src/tinhnguyenresume.pdf';
 
 export default function () {
   return (
@@ -10,7 +11,7 @@ export default function () {
       }}
     >
       <div className='right-column'>
-        <h1> About Me (needs picture of me)</h1>
+        <h1>About Me</h1>
         <div className='about-text'>
           Hello! I'm Tinh Nguyen and I'm a senior at Bingham High. I'm an
           aspiring software/web developer and I will be going to the University
@@ -33,7 +34,7 @@ export default function () {
         style={{
           background: 'url(' + profilePicture + ') no-repeat',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top',
         }}
       />
     </div>

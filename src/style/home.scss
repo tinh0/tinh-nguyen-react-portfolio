@@ -26,7 +26,7 @@
     margin: 30px;
     font-size: 1em;
     max-height: calc(100vh - 84.8px);
-    width: 50%;
+    width: 60%;
     height: 100%;
 
     .contact-bullet-points {
@@ -40,7 +40,7 @@
 
         .icon {
           font-size: 2em;
-          color: $teal;
+          color: #3d3df3;
         }
 
         .text {
@@ -54,7 +54,7 @@
 }
 
 .left-column {
-  width: 50%;
+  width: 40%;
   height: 100%;
 }
 
