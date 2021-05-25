@@ -6,10 +6,12 @@ import Contact from "../pages/contact";
 import Footer from "../pages/footer";
 import Certifications from './certifications';
 import Skills from './skills';
+import Header from './header';
 
 export default function () {
   return (
     <div>
+      <Header />
       <About />
       <Skills />
       <PortfolioContainer />

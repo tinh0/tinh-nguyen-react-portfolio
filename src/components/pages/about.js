@@ -1,14 +1,14 @@
 import React from 'react';
-import profilePicture from '../../../static/assets/images/IMG_8254.jpg';
+import ProfilePicture from '../../../static/assets/images/IMG_8254.jpg';
 // import Resume from '../../../src/tinhnguyenresume.pdf';
 
-export default function () {
+export default function About() {
   return (
     <div
       className='homepage-wrapper'
-      style={{
-        marginTop: '84.8px',
-      }}
+      // style={{
+      //   borderTop: 'solid 10px white'
+      // }}
     >
       <div className='right-column'>
         <h1>About Me</h1>
@@ -32,7 +32,7 @@ export default function () {
       <div
         className='left-column'
         style={{
-          background: 'url(' + profilePicture + ') no-repeat',
+          background: 'url(' + ProfilePicture + ') no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'top',
         }}
